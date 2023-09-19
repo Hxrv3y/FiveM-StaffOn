@@ -32,7 +32,7 @@ end)
 Citizen.CreateThread(function()
     while true do 
         if staffon then 
-            DrawAdvancedText(0.955, 0.726, 0.025, 0.0048, 0.8, "Staff mode enabled", 255, 0, 0, 255, 6, 0)
+            DrawAdvancedText(0.955, 0.726, 0.025, 0.0048, 0.8, "Staff mode enabled:\nRemember to /staffoff", 255, 0, 0, 255, 6, 0)
         end
         Wait(0)
     end
