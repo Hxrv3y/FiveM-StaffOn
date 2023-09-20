@@ -12,7 +12,7 @@ AddEventHandler("vRP:staffon", function(staffmode)
             clothing = tvRP.getCustomization()
         end
         SetEntityInvincible(PlayerPedId(), true)
-        local ped = "u_m_m_jesus_01" -- staff ped 
+        local ped = "mp_m_freemode_01" -- Default male ped
         RequestModel(ped)
         while not HasModelLoaded(ped) do
           Citizen.Wait(0)
@@ -20,7 +20,7 @@ AddEventHandler("vRP:staffon", function(staffmode)
 
         SetPlayerModel(PlayerId(), ped)
         SetModelAsNoLongerNeeded(ped)
-        SetPedComponentVariation(ped, 0, 0, 0, 0) --- https://docs.fivem.net/natives/?_0x262B14F48D29DE80 if you wanna change component or something
+        SetPedComponentVariation(ped, 1, 3, 1, 2) --- https://docs.fivem.net/natives/?_0x262B14F48D29DE80 if you wanna change component or something
     else
         SetEntityInvincible(PlayerPedId(), false)
         tvRP.setCustomization({clothing})
