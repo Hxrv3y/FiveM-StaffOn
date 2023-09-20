@@ -8,7 +8,7 @@ local staffmode = {}
 
 RegisterCommand("staffon", function(source, args)
 	local user_id = vRP.getUserId({source})
-	if vRP.hasPermission({user_id, "staff.mode"}) then 
+	if vRP.hasPermission({user_id, "admin.tickets"}) then 
 		if not staffmode[source] then 
 			TriggerClientEvent("vRP:staffon", source, true)
 			staffmode[source] = source
