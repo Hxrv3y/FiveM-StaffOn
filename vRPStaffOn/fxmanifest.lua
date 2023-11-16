@@ -3,7 +3,7 @@ games { 'gta5' }
 author 'Harv'
 client_scripts {
 	"@vrp/client/Tunnel.lua",
-    "@vrp/client/Proxy.lua",
+	"@vrp/client/Proxy.lua",
 	'client/main.lua',
 }
 
