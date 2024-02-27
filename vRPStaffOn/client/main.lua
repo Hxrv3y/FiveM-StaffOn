@@ -8,19 +8,21 @@ RegisterNetEvent("vRP:staffon")
 AddEventHandler("vRP:staffon", function(staffmode)
     staffon = staffmode
     if staffon then 
-        if clothing == nil then 
-            clothing = tvRP.getCustomization()
-        end
         SetEntityInvincible(PlayerPedId(), true)
-        local ped = "mp_m_freemode_01" -- Default male ped
-        RequestModel(ped)
-        while not HasModelLoaded(ped) do
-          Citizen.Wait(0)
-        end
-
-        SetPlayerModel(PlayerId(), ped)
-        SetModelAsNoLongerNeeded(ped)
-        SetPedComponentVariation(ped, 1, 3, 1, 2) --- https://docs.fivem.net/natives/?_0x262B14F48D29DE80 if you wanna change component or something
+        local ped = PlayerPedId()
+        SetPedComponentVariation(ped, 0, 3, 1, 2) --Head
+	SetPedComponentVariation(ped, 1, 3, 1, 2) -- Beard
+	SetPedComponentVariation(ped, 2, 3, 1, 2) -- Hair
+	SetPedComponentVariation(ped, 3, 3, 1, 2) -- Upper/Undershirt
+	SetPedComponentVariation(ped, 4, 3, 1, 2) --Lower/Pants
+	SetPedComponentVariation(ped, 5, 3, 1, 2) -- Hands
+	SetPedComponentVariation(ped, 6, 3, 1, 2) -- Feet/Shoes
+	SetPedComponentVariation(ped, 7, 3, 1, 2) -- Teeth
+	SetPedComponentVariation(ped, 8, 3, 1, 2) -- Accessories
+	SetPedComponentVariation(ped, 9, 3, 1, 2) -- Task
+	SetPedComponentVariation(ped, 10, 3, 1, 2) -- Decal
+	SetPedComponentVariation(ped, 11, 3, 1, 2) -- Jbib/Jackets
+	--Remove the ones you don't want won't make a difference. Don't change the first number, but second is the Component ID, third is texture and fourth is pallete ID
     else
         SetEntityInvincible(PlayerPedId(), false)
         tvRP.setCustomization({clothing})
